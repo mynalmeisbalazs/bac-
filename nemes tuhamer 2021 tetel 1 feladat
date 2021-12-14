@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long int n,eredmenyek[11];
+    short x,hossz=0;
+    cin>>n;
+    while (n>31){
+        x=n%10;
+        n=n/10-3*x;
+        eredmenyek[hossz]=n;
+        hossz++;
+    }
+    if(n%31==0){
+        cout<< "Igen"<<endl;
+    }else{
+   cout << "nem" << endl;
+}
+for(x=0;x<hossz;x++){
+    cout<< eredmenyek[x] << " ";
+
+}
+cout << endl;
+return 0;
+}
