@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+int n,temp;
+cin>>n;
+int k;
+cin>>k;
+int ossz=0;
+int dal[n];
+for(int i=0;i<n;i++){
+cin>>dal[i];
+    ossz+= dal[i];
+}
+for(int i=0;i<k;i++){
+    cin>>temp;
+    temp=temp%ossz;
+    if(temp == 0 ){cout << "]" ;continue ;}
+    for(int j=0;j<n;j++){
+        if(temp<=dal[j]){
+            cout<< j+1 << " ";
+            break;
+        }
+        temp-=dal[j];
+    }
+}
+}
