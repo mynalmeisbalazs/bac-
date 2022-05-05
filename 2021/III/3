@@ -1,0 +1,27 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin("bac.txt");
+int main()
+{
+    int x,a,b,sol1=-1,sol2=-1;
+    fin>>x>>a;
+    while(fin>>b)
+    {
+        if(a%1000==x && b%1000==x)
+        {
+            sol1=a;
+            sol2=b;
+        }
+        a=b;
+    }
+    if(sol1!=-1 && sol2!=-1)
+    {
+        cout<< sol1 << " " <<sol2;
+    }
+    else
+    {
+        cout<<"nu exista " ;
+    }
+    return 0;
+}
