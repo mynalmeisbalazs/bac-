@@ -1,0 +1,58 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+
+{
+    ifstream f("bac.txt");
+
+    int i=0,x,n=-1,v=-1;
+
+    while(i<3)
+
+        {
+
+            f>>x;
+
+            if(x%2!=0)
+
+                i++;
+
+        }
+
+    while(i==3)
+
+    {
+
+        f>>x;
+
+        if(x%2!=0)
+
+            i++;
+
+        else
+
+        if(n<x)
+
+            {
+
+                v=n;
+
+                n=x;
+
+            }
+
+    }
+
+    if(n==-1 || v==-1)
+
+        cout<<"Nu exista";
+
+    else
+
+        cout<<v<<" "<<n;
+    f.close();
+    return 0;
+
+}
