@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+fstream in("salam.txt");
+int main()
+{
+int na,nb,fa[100]={0},fb[100]={0};
+in>>na>>nb;
+for(int i=1;i<=na;i++){
+    int x;
+    in>>x;
+    fa[x%100]++;
+}
+for(int i=1;i<=nb;i++){
+    int x;
+    in>>x;
+    fb[x%100]++;
+}
+int ans=0;
+for(int i=0;i<99;i++){
+    int c1=i/10;
+    int c2=i%10;
+    ans+=fa[i]*fb[i];
+    if(c1!=c2){
+        int nr=c2*10+c1;
+        ans+=fa[i]*fb[nr];
+    }
+}
+cout<<ans;
+
+return 0;
+}
